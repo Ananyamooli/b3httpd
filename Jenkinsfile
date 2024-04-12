@@ -7,5 +7,10 @@ pipeline {
         echo 'First pipeline'
       }
     }
+    stage ('Fority') {
+      steps {
+        echo 'Executing scans'
+      }
+    }
   }
 }
