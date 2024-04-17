@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage ('prodDeploy') {
             when {
-            environment name: 'DEPLOY_TO', value: 'other'
+            environment name: 'DEPLOY_TO', value: 'production'
         }
         steps {
             echo 'Deploying to production'
