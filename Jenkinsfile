@@ -4,9 +4,9 @@ pipeline{
         DEPLOY_TO = 'production'
     }
     stages {
-        stage ('prod Deploy') {
+        stage ('prodDeploy') {
             when {
-                equals expected: 5, actual: currentBuildnumber
+                equals expected: 5, actual: currentBuild.number
             }
             steps {
                 echo 'deploying to production'
