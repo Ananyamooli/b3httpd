@@ -1,40 +1,15 @@
 pipeline {
     agent any
+    environment {
+        DEPLOY_TO = 'production'
+    }
     stages {
-        stage ('Build') {
+        stage ('proddeploy') {
+            when
+            environment name: 'DEPLOY_TO', value: 'other'
+        }
         steps {
-            echo 'Build Pipeline'
-        }
-        }
-        stage ('Scan') {
-        steps {
-            echo 'Scanning Pipelines'
-        }
-        } 
-        stage ('Docker build') {
-        steps {
-            echo 'Docker Pipelines'
-        }
-        }
-        stage ('Dev Deploy') {
-        steps {
-            echo 'Dev pipelines'
-        }
-        }
-        stage ('Deploy to test') {
-          steps {
-            echo 'test pipelines'
-          }
-        }
-        stage ('deploy to stage') {
-          steps {
-            echo 'stage pipeline'
-          }
-        }
-        stage ('Prod Deployment') {
-          steps{
-            echo 'Production pipeline'
-          }
+            echo 'deploying to production'
         }
     }
 }
