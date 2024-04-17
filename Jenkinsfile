@@ -1,16 +1,16 @@
-pipeline {
+pipeline{
     agent any
     environment {
         DEPLOY_TO = 'production'
     }
     stages {
-        stage ('prodDeploy') {
+        stage ('prod Deploy') {
             when {
-            environment name: 'DEPLOY_TO', value: 'production'
-        }
-        steps {
-            echo 'Deploying to production'
+                equals expected: 5, actual: currentBuildnumber
+            }
+            steps {
+                echo 'deploying to production'
+            }
         }
     }
 }
-}  
