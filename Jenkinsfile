@@ -4,12 +4,12 @@ pipeline {
         DEPLOY_TO = 'production'
     }
     stages {
-        stage ('proddeploy') {
+        stage ('prodDeploy') {
             when
             environment name: 'DEPLOY_TO', value: 'other'
         }
         steps {
-            echo 'deploying to production'
+            echo 'Deploying to production'
         }
     }
 }
