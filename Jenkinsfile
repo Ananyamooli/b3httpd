@@ -21,5 +21,20 @@ pipeline {
             echo 'Dev pipelines'
         }
         }
+        stage ('Deploy to test') {
+          steps {
+            echo 'test pipelines'
+          }
+        }
+        stage ('deploy to stage') {
+          steps {
+            echo 'stage pipeline'
+          }
+        }
+        stage ('Prod Deployment') {
+          steps{
+            echo 'Production pipeline'
+          }
+        }
     }
 }
