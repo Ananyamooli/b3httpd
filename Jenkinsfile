@@ -5,7 +5,7 @@ pipeline {
     }
     stages {
         stage ('prodDeploy') {
-            when
+            when {
             environment name: 'DEPLOY_TO', value: 'other'
         }
         steps {
@@ -13,3 +13,4 @@ pipeline {
         }
     }
 }
+}  
