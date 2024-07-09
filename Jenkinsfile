@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage ('Build') {
+        stage ('Hotfix Build') {
         steps {
             echo 'Build Pipeline'
         }
