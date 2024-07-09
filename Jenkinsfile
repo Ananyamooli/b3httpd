@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage ('Hotfix Build') {
         steps {
-            echo 'Build Pipeline'
+            echo ' Hotfix Build Pipeline'
         }
         }
         stage ('Scan') {
         steps {
-            echo 'Scanning Pipelines'
+            echo 'HotfixScanning Pipelines'
         }
         } 
         stage ('Docker build') {
